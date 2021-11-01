@@ -35,15 +35,15 @@ int main(void)
         if(SW2 == 0)
         {
             LED3 = 1;
-            __delay_ms(100);
+            __delay_ms(1000);
             LED4 = 1;
-            __delay_ms(100);
+            __delay_ms(40);
             LED5 = 1;
-            __delay_ms(100);
+            __delay_ms(500);
             LED6 = 1;
-            __delay_ms(100);
+            __delay_ms(800);
             LED3 = 0;
-            __delay_ms(100);
+            __delay_ms(90);
             LED4 = 0;
             __delay_ms(100);
             LED5 = 0;
