@@ -32,7 +32,7 @@ int main(void)
     while(1)
 	{
         // If SW2 is pressed, make a flashy light pattern
-        if(SW3 == 0)
+        if(SW4 == 0)
         {
             LED3 = 1;
             __delay_ms(1000);
