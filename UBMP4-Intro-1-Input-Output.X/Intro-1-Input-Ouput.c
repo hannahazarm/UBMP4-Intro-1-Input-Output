@@ -21,6 +21,24 @@
 // TODO Set linker code offset to '800' under "Additional options" pull-down.
 
 // The main function is required, and the program begins executing from here.
+void makeLEDPattern() {
+                LED3 = 1;
+            __delay_ms(100);
+            LED4 = 1;
+            __delay_ms(40);
+            LED5 = 1;
+            __delay_ms(500);
+            LED6 = 1;
+            __delay_ms(100);
+            LED3 = 0;
+            __delay_ms(90);
+            LED4 = 0;
+            __delay_ms(400);
+            LED5 = 0;
+            __delay_ms(100);
+            LED6 = 0;
+            __delay_ms(100);
+}
 
 int main(void)
 {
@@ -34,30 +52,19 @@ int main(void)
         // If SW2 is pressed, make a flashy light pattern
         if(SW4 == 0)
         {
-            LED3 = 1;
-            __delay_ms(1000);
-            LED4 = 1;
-            __delay_ms(40);
-            LED5 = 1;
-            __delay_ms(500);
-            LED6 = 1;
-            __delay_ms(800);
-            LED3 = 0;
-            __delay_ms(90);
-            LED4 = 0;
-            __delay_ms(100);
-            LED5 = 0;
-            __delay_ms(100);
-            LED6 = 0;
-            __delay_ms(100);
+makeLEDPattern();
         }
         
         // Add code for your Program Analysis and Programming Activities here:
+         BEEPER = 1;
+            __delay_us(567);
+            BEEPER = 0;
+            __delay_us(567);
 
         // Activate bootloader if SW1 is pressed.
-        if(SW1 == 0)
+        if(SW3 == 0)
         {
-            RESET();
+          RESET();
         }
     }
 }
@@ -67,19 +74,24 @@ int main(void)
  * 1. How many times do the LEDs flash if SW2 is quickly pressed and released?
  *    Do the LEDs keep flashing when SW2 is held? Look at the program and
  *    explain why this happens when SW2 is held.
+ The LEDs only flash if SW2 is pressed, and will flash for as long as it is held. 
  * 
  * 2. Explain the difference between the statements: LED3 = 0; and LED3 = 1;
+ LED3 = 0 outputs 0V to the LED. LED3 = 1 outputs SV to the LED. 
  * 
  * 3. What voltage do you expect the microcontroller to output to LED D3 when
  *    the statement LED3 = 0; runs? What voltage do you expect the output to be
  *    when the statement LED3 = 1; runs?
+ I expect LED3 = 0 to output 0 voltage, and LED3 to output 1 voltage. 
  * 
  *    You can confirm the output voltage with a voltmeter if you have access
  *    to one. If you tried that, did the voltage match your prediction?
+
  * 
  * 4. The statement 'if(SW2 == 0)' uses two equal signs, while the statement
  *    'LED3 = 1;' uses a single equal sign. What operation is performed by one
  *    equal sign? What operation is performed by two equal signs?
+ 
  * 
  * 5. The following program code includes instructions that write to the PORTC
  *    output latches directly. Try it by copying and pasting this code below
