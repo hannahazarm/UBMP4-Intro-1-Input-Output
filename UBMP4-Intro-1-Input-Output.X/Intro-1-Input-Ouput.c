@@ -82,7 +82,7 @@ makeLEDPattern();
  * 3. What voltage do you expect the microcontroller to output to LED D3 when
  *    the statement LED3 = 0; runs? What voltage do you expect the output to be
  *    when the statement LED3 = 1; runs?
- I expect LED3 = 0 to output 0 voltage, and LED3 to output 1 voltage. 
+ It is expected to be one. 
  * 
  *    You can confirm the output voltage with a voltmeter if you have access
  *    to one. If you tried that, did the voltage match your prediction?
@@ -91,7 +91,7 @@ makeLEDPattern();
  * 4. The statement 'if(SW2 == 0)' uses two equal signs, while the statement
  *    'LED3 = 1;' uses a single equal sign. What operation is performed by one
  *    equal sign? What operation is performed by two equal signs?
- 
+ One equal sign is an assignment operation. Two equal signs mean you have two conditional operators.
  * 
  * 5. The following program code includes instructions that write to the PORTC
  *    output latches directly. Try it by copying and pasting this code below
