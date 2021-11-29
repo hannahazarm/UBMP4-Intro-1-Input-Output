@@ -5,7 +5,7 @@
  This example UBMP4 input and output program demonstrates pushbutton input, LED
  (bit) output, port latch (byte) output, time delay functions, and simple 'if'
  condition structures.
- 
+
  Additional program analysis and programming activities demonstrate byte output,
  logical condition operators AND and OR, using delay functions to create sound,
  and simulated start-stop button functionality.
