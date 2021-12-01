@@ -25,15 +25,15 @@ void makeLEDPattern() {
                 LED3 = 1;
             __delay_ms(100);
             LED4 = 1;
-            __delay_ms(40);
+            __delay_ms(100);
             LED5 = 1;
-            __delay_ms(500);
+            __delay_ms(100);
             LED6 = 1;
             __delay_ms(100);
             LED3 = 0;
-            __delay_ms(90);
+            __delay_ms(100);
             LED4 = 0;
-            __delay_ms(400);
+            __delay_ms(100);
             LED5 = 0;
             __delay_ms(100);
             LED6 = 0;
@@ -52,17 +52,29 @@ int main(void)
         // If SW2 is pressed, make a flashy light pattern
         if(SW4 == 0)
         {
-makeLEDPattern();
+            makeLEDPattern();
         }
         
         // Add code for your Program Analysis and Programming Activities here:
-         BEEPER = 1;
-            __delay_us(567);
-            BEEPER = 0;
-            __delay_us(567);
+          // Momentary button using if structure
+        if(SW3 == 0)
+        {
+            LED4 = 1;
+        }
+        else
+        {
+            LED4 = 0;
+        }
+
+        // Momentary button using while structure
+        while(SW4 == 0)
+        {
+            LED5 = 1;
+        }
+        LED5 = 0;
 
         // Activate bootloader if SW1 is pressed.
-        if(SW3 == 0)
+        if(SW1 == 0)
         {
           RESET();
         }
@@ -108,6 +120,8 @@ makeLEDPattern();
  *    What happens when pushbutton SW3 is pressed? Identify at least one
  *    advantage and one disadvantage of controlling the LEDs using 'LATC' writes
  *    rather than through individual 'LEDn = x;' statements.
+An advantage is that the code LED3=1 would be easier to write and understand, but a disadvantage would be that we could accidentally
+destroy the code. 
  * 
  * 6. Next, compare the operation of 'if' and 'while' structures to simulate
  *    momentary buttons. Replace the code you added in 5, above, with this code:
@@ -133,6 +147,7 @@ makeLEDPattern();
  * 
  *    Next, press and hold SW3 while pressing and releasing SW4. Does it work
  *    as expected?
+ Yes
  * 
  *    Next, try press and holding SW4 while pressing and releasing SW3. Does it
  *    work as expected? Explain the difference in operation between the 'if' and
